@@ -20,7 +20,7 @@ bool check_input(string text, string keyword);
 void decryption(string message, string keyword);
 
 // function which asks user if he want to use encryption or decryption and returns his choice.
-int choose_mode();
+string choose_mode();
 
 // function contains all funtions and the final result.
 void program();
@@ -113,13 +113,13 @@ void decryption(string message, string keyword)
 	}
 }
 
-int choose_mode()
+string choose_mode()
 {
-	int choice;
+	string choice;
 	cout << "Welcome to our program, Enter 1 for encryption or 2 for decryption." << endl;
 	cin >> choice;
 	cin.ignore();
-	if (choice != 1 && choice != 2)
+	if (choice != "1" && choice != "2")
 	{
 		cout << "Invalid input please try again." << endl;
 		choose_mode();
@@ -131,7 +131,7 @@ void program()
 {
 	string message, keyword;
 
-	if (choose_mode() == 1) // at first ask user if he wants to use encryption or decryption and checks if input is valid or not.
+	if (choose_mode() == "1") // at first ask user if he wants to use encryption or decryption and checks if input is valid or not.
 	{
 		// takes the message and keyword from user.
 		cout << "Enter message you want to encrypt please: " << endl;
